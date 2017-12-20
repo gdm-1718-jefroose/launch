@@ -1,0 +1,10 @@
+/*Node scss*/
+@import './node_modules/materialize-css/sass/materialize.scss';
+
+/*Local scss*/
+@import 'general/index';
+@import 'nav/index';
+
+@import 'home/index';
+
+@import 'components/index';

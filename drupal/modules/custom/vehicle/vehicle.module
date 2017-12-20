@@ -1,0 +1,35 @@
+<?php
+
+/**
+ * @file
+ * Contains vehicle.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function vehicle_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the vehicle module.
+    case 'help.page.vehicle':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Vehicle Module') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function vehicle_theme() {
+  return [
+    'vehicle' => [
+      'render element' => 'children',
+    ],
+  ];
+}

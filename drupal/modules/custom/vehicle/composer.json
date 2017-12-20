@@ -1,0 +1,14 @@
+{
+  "name": "drupal/vehicle",
+  "type": "drupal-module",
+  "description": "Vehicle Module",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/vehicle",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/vehicle",
+    "source": "http://cgit.drupalcode.org/vehicle"
+  },
+  "require": { }
+}

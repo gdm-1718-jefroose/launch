@@ -1,0 +1,35 @@
+<?php
+
+/**
+ * @file
+ * Contains launch.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function launch_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the launch module.
+    case 'help.page.launch':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Launch Module') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function launch_theme() {
+  return [
+    'launch' => [
+      'render element' => 'children',
+    ],
+  ];
+}

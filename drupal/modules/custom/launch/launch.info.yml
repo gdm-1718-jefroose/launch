@@ -1,0 +1,5 @@
+name: Launch
+type: module
+description: Launch Module
+core: 8.x
+package: Custom

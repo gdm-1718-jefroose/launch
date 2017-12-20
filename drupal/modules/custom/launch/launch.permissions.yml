@@ -1,0 +1,30 @@
+add vehicle entities:
+  title: 'Create new Vehicle entities'
+
+administer vehicle entities:
+  title: 'Administer Vehicle entities'
+  description: 'Allow to access the administration form to configure Vehicle entities.'
+  restrict access: true
+
+delete vehicle entities:
+  title: 'Delete Vehicle entities'
+
+edit vehicle entities:
+  title: 'Edit Vehicle entities'
+
+view published vehicle entities:
+  title: 'View published Vehicle entities'
+
+view unpublished vehicle entities:
+  title: 'View unpublished Vehicle entities'
+
+view all vehicle revisions:
+  title: 'View all Vehicle revisions'
+
+revert all vehicle revisions:
+  title: 'Revert all Vehicle revisions'
+  description: 'Role requires permission <em>view Vehicle revisions</em> and <em>edit rights</em> for vehicle entities in question or <em>administer vehicle entities</em>.'
+
+delete all vehicle revisions:
+  title: 'Delete all revisions'
+  description: 'Role requires permission to <em>view Vehicle revisions</em> and <em>delete rights</em> for vehicle entities in question or <em>administer vehicle entities</em>.'

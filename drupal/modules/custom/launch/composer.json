@@ -1,0 +1,14 @@
+{
+  "name": "drupal/launch",
+  "type": "drupal-module",
+  "description": "Launch Module",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/launch",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/launch",
+    "source": "http://cgit.drupalcode.org/launch"
+  },
+  "require": { }
+}

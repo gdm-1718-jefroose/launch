@@ -1,7 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Hello from '@/components/Hello'
-import Test from '@/components/Test'
+import vehicleList from '@/components/Vehicle-List'
+import vehicleDetail from '@/components/Vehicle-Detail'
+import vehicleCreate from '@/components/Vehicle-Create'
+import login from '@/components/Login'
 
 Vue.use(Router)
 
@@ -9,13 +11,23 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Hello',
-      component: Hello
+      name: 'vehicle-list',
+      component: vehicleList
     },
     {
-      path: '/test',
-      name: 'Test',
-      component: Test
-    }
+      path: '/vehicle/:vehicleID',
+      name: 'vehicle-detail',
+      component: vehicleDetail
+    },
+    {
+      path:'/create',
+      name: 'vehicle-create',
+      component: vehicleCreate
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: login
+    },
   ]
 })
