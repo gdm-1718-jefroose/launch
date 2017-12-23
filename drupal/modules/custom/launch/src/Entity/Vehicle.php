@@ -35,7 +35,7 @@ use Drupal\user\UserInterface;
  *       "html" = "Drupal\launch\VehicleHtmlRouteProvider",
  *     },
  *   },
- *   base_table = "launch_Nvehicle",
+ *   base_table = "launch_vehicle",
  *   data_table = "vehicle_field_data",
  *   revision_table = "vehicle_revision",
  *   revision_data_table = "vehicle_field_revision",

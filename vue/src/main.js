@@ -4,6 +4,7 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import auth from './auth'
 //import '@/assets/js/materialize.min.js'
 
 Vue.config.productionTip = false
@@ -15,3 +16,5 @@ new Vue({
   template: '<App/>',
   components: { App }
 })
+
+auth.checkAuth();
