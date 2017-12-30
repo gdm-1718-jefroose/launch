@@ -25,7 +25,7 @@ export default {
         localStorage.setItem('uid', response.data.current_user.uid);
         localStorage.setItem('csrf_token', response.data.csrf_token);
         localStorage.setItem('logout_token',response.data.logout_token);
-        localStorage.setItem('auth', window.btoa(this.name + ':' + this.password));
+        localStorage.setItem('auth', window.btoa(params.name + ':' + params.pass));
 
         this.user.authenticated = true;
         this.user.name = localStorage.getItem('username')
@@ -49,7 +49,6 @@ export default {
       .post(SIGNUP_URL, params, {
         'Accept' : 'application/hal+json',
         'Content-Type' : 'application/hal+json',
-        'X-CSRF-Token' : 'TXM82YpXeTff3HJcGFvL6vKKmvzh-JilKuSrDmLrAS8'   
       })
       .then((response)=>{
         context.success = 'Registration successful';
@@ -77,6 +76,8 @@ export default {
 
     this.user.authenticated = false;
     this.user.name = ''  
+
+    router.push('/');  
   },
 
   checkAuth() {

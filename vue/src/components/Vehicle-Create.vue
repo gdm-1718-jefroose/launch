@@ -13,13 +13,15 @@
           <label for="longitude">longitude</label>
         </div>
       </div>
-      <div class="input-field col s12">
-        <select>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-        </select>
-        <label>Seats</label>
+      <div class="row">
+        <div class="input-field col s12">
+          <select>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+          </select>
+          <label>Seats</label>
+        </div>
       </div>
       <div class="row">
         <div class="input-field col s12">

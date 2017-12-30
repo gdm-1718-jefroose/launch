@@ -65,7 +65,7 @@ export default {
           pass: [{"value": this.password}]
       }
 
-      auth.signup(this, credentials, '/');
+      auth.signup(this, credentials, '/login');
     }
   }
 }
