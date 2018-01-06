@@ -1,12 +1,12 @@
 <template>
   <div class="row">
     <div class="container">
-      <h3>Profile of {{name}}</h3>
+      <h5>Profile of {{name}}</h5>
     </div>
     <form class="col m6 offset-m3 s12" >
       <div class="row">
         <div class="input-field col s12">
-          <input id="name" type="text" v-model="name"  class="validate">
+          <input id="name" type="text" placeholder="name" v-model="name"  class="validate">
           <label class="active" for="name">Username</label>
         </div>
       </div>
@@ -16,7 +16,7 @@
           <label  class="active" for="email">Email</label>
         </div>
       </div>
-      <div class="row">
+      <!--<div class="row">
         <div class="input-field col s5">
           <input id="firstname" type="text" v-model="firstName" class="validate">
           <label class="active" for="firstname">First Name</label>
@@ -47,7 +47,7 @@
           <input id="country" type="text" v-model="country" class="validate">
           <label class="active" for="country">Country</label>
         </div>
-      </div>
+      </div>-->
       <button class="btn waves-effect waves-light" type="submit" name="action">Save
         <i class="material-icons right">save</i>
       </button>

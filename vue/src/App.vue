@@ -24,8 +24,8 @@
                 <img src="https://upload.wikimedia.org/wikipedia/commons/e/ee/Lyons_Architects_Office.jpg">
               </div>
               <a href="#"><img class="circle" src="https://pbs.twimg.com/profile_images/920671362993311744/z-RnUyaI.jpg"></a>
-              <a href="#"><span class="white-text name">Jef Roosens</span></a>
-              <a href="#"><span class="white-text email">jef.roosens@gmail.com</span></a>
+              <a href="#"><span class="white-text name">{{user.name}}</span></a>
+              <br/>
             </div></li>
             <li><router-link to='/' class="sidenav-close"><i class="material-icons">weekend</i>All vehicles</router-link></li>
             <li class="divider"></li>
@@ -59,7 +59,7 @@ export default {
   name: 'app',
   data(){
     return{
-      user: auth.user,
+      user: auth.user
     }
   },
   methods:{

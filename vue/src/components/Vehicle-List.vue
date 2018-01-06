@@ -10,7 +10,7 @@
       <div class="indeterminate"></div>
     </div>
     <div class="col s12" id="overview">
-      <div class="nav-wrapper">
+      <!--<div class="nav-wrapper">
         <form>
           <div class="input-field">
             <input id="search" type="search"  v-model="liveFilter" required>
@@ -18,7 +18,7 @@
             <i class="material-icons">close</i>
           </div>
         </form>
-      </div>
+      </div>-->
       <ul class="collection">
         <li class="collection-item avatar" v-for="vehicle in vehicles">
           <img class="circle" src="https://secure.img1-fg.wfcdn.com/im/69056323/resize-h299-p1-w299%5Ecompr-r85/3321/33218498/Patricia+Loveseat.jpg" alt="Couch">
@@ -63,7 +63,6 @@ export default {
     return {
       vehicles: '',
       loading: false,
-      liveFilter: '',
       zoom: 12,
       customBus: new Vue(),
       infoContent: '',

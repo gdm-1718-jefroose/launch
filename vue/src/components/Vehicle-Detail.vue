@@ -43,19 +43,19 @@
       <form class="col s12 card-panel" v-on:submit="addReview">
         <div class="row">
           <div class="input-field col s12">
-            <input id="title" type="text" class="validate" v-model="title">
+            <input id="title" type="text" class="validate" v-model="title" required>
             <label for="title">Title</label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s12">
-            <textarea id="body" class="materialize-textarea" v-model="body"></textarea>
+            <textarea id="body" class="materialize-textarea" v-model="body" required></textarea>
             <label for="body">Review</label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s12 ">
-            <select class="select-rating"  v-model="rating">
+            <select class="select-rating"  v-model="rating" required>
               <option value=1>1</option>
               <option value=2>2</option>
               <option value=3>3</option>
@@ -129,7 +129,6 @@ export default {
     addReview: function(event){
       event.preventDefault();
       
-      var uid = localStorage.getItem('auth');
 
       var config = {
         headers: {

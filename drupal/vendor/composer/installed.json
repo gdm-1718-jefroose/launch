@@ -6603,5 +6603,54 @@
             "drupal",
             "symfony"
         ]
+    },
+    {
+        "name": "drupal/rest_export_nested",
+        "version": "1.0.0-alpha2",
+        "version_normalized": "1.0.0.0-alpha2",
+        "source": {
+            "type": "git",
+            "url": "https://git.drupal.org/project/rest_export_nested",
+            "reference": "8.x-1.0-alpha2"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://ftp.drupal.org/files/projects/rest_export_nested-8.x-1.0-alpha2.zip",
+            "reference": "8.x-1.0-alpha2",
+            "shasum": "407e08e28ab8a41c97504818258ce612b17cccb1"
+        },
+        "require": {
+            "drupal/core": "*"
+        },
+        "type": "drupal-module",
+        "extra": {
+            "branch-alias": {
+                "dev-1.x": "1.x-dev"
+            },
+            "drupal": {
+                "version": "8.x-1.0-alpha2",
+                "datestamp": "1505176744",
+                "security-coverage": {
+                    "status": "not-covered",
+                    "message": "Project has not opted into security advisory coverage!"
+                }
+            }
+        },
+        "installation-source": "dist",
+        "notification-url": "https://packages.drupal.org/8/downloads",
+        "license": [
+            "GPL-2.0+"
+        ],
+        "authors": [
+            {
+                "name": "imclean",
+                "homepage": "https://www.drupal.org/user/112588"
+            }
+        ],
+        "description": "Extends the REST Export views display to support JSON within fields.",
+        "homepage": "https://www.drupal.org/project/rest_export_nested",
+        "support": {
+            "source": "http://cgit.drupalcode.org/rest_export_nested"
+        }
     }
 ]

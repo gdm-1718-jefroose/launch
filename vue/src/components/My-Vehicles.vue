@@ -7,6 +7,7 @@
     <ul class="collection">
       <li class="collection-item avatar" v-for="vehicle in vehicles" v-show="vehicle.user_id[0].target_id == uid">
         <div>
+          <img class="circle" src="https://secure.img1-fg.wfcdn.com/im/69056323/resize-h299-p1-w299%5Ecompr-r85/3321/33218498/Patricia+Loveseat.jpg" alt="Couch">
           <span class="title">{{ vehicle.name[0].value }}</span>
           <p><strong>Seats:</strong> {{ vehicle.field_seats[0].value }}</p>
           <p><strong>Licence:</strong> {{ vehicle.field_license[0].value }}</p>
@@ -25,7 +26,7 @@
 <script>
 import axios from 'axios'
 export default {
-  name: 'register',
+  name: 'my-vehicles',
   data () {
     return {
       vehicles: '',
