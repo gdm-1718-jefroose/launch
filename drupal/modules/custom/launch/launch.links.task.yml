@@ -1,27 +1,88 @@
-# Vehicle routing definition
-vehicle.settings_tab:
-  route_name: vehicle.settings
+# Couch routing definition
+couch.settings_tab:
+  route_name: couch.settings
   title: 'Settings'
-  base_route: vehicle.settings
+  base_route: couch.settings
 
-entity.vehicle.canonical:
-  route_name: entity.vehicle.canonical
-  base_route: entity.vehicle.canonical
+entity.couch.canonical:
+  route_name: entity.couch.canonical
+  base_route: entity.couch.canonical
   title: 'View'
 
-entity.vehicle.edit_form:
-  route_name: entity.vehicle.edit_form
-  base_route: entity.vehicle.canonical
+entity.couch.edit_form:
+  route_name: entity.couch.edit_form
+  base_route: entity.couch.canonical
   title: 'Edit'
 
-entity.vehicle.version_history:
-  route_name: entity.vehicle.version_history
-  base_route: entity.vehicle.canonical
-  title: 'Revisions'
+entity.couch.delete_form:
+  route_name:  entity.couch.delete_form
+  base_route:  entity.couch.canonical
+  title: Delete
+  weight: 10
 
-entity.vehicle.delete_form:
-  route_name:  entity.vehicle.delete_form
-  base_route:  entity.vehicle.canonical
+# Reservation routing definition
+reservation.settings_tab:
+  route_name: reservation.settings
+  title: 'Settings'
+  base_route: reservation.settings
+
+entity.reservation.canonical:
+  route_name: entity.reservation.canonical
+  base_route: entity.reservation.canonical
+  title: 'View'
+
+entity.reservation.edit_form:
+  route_name: entity.reservation.edit_form
+  base_route: entity.reservation.canonical
+  title: 'Edit'
+
+entity.reservation.delete_form:
+  route_name:  entity.reservation.delete_form
+  base_route:  entity.reservation.canonical
+  title: Delete
+  weight: 10
+
+# Dealer routing definition
+dealer.settings_tab:
+  route_name: dealer.settings
+  title: 'Settings'
+  base_route: dealer.settings
+
+entity.dealer.canonical:
+  route_name: entity.dealer.canonical
+  base_route: entity.dealer.canonical
+  title: 'View'
+
+entity.dealer.edit_form:
+  route_name: entity.dealer.edit_form
+  base_route: entity.dealer.canonical
+  title: 'Edit'
+
+entity.dealer.delete_form:
+  route_name:  entity.dealer.delete_form
+  base_route:  entity.dealer.canonical
+  title: Delete
+  weight: 10
+
+# Review routing definition
+review.settings_tab:
+  route_name: review.settings
+  title: 'Settings'
+  base_route: review.settings
+
+entity.review.canonical:
+  route_name: entity.review.canonical
+  base_route: entity.review.canonical
+  title: 'View'
+
+entity.review.edit_form:
+  route_name: entity.review.edit_form
+  base_route: entity.review.canonical
+  title: 'Edit'
+
+entity.review.delete_form:
+  route_name:  entity.review.delete_form
+  base_route:  entity.review.canonical
   title: Delete
   weight: 10
 

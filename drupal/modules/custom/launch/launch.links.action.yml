@@ -1,5 +1,20 @@
-entity.vehicle.add_form:
-  route_name: entity.vehicle.add_form
-  title: 'Add Vehicle'
+entity.couch.add_form:
+  route_name: entity.couch.add_form
+  title: 'Add Couch'
   appears_on:
-    - entity.vehicle.collection
+    - entity.couch.collection
+entity.reservation.add_form:
+  route_name: entity.reservation.add_form
+  title: 'Add Reservation'
+  appears_on:
+    - entity.reservation.collection
+entity.dealer.add_form:
+  route_name: entity.dealer.add_form
+  title: 'Add Dealer'
+  appears_on:
+    - entity.dealer.collection
+entity.review.add_form:
+  route_name: entity.review.add_form
+  title: 'Add Review'
+  appears_on:
+    - entity.review.collection

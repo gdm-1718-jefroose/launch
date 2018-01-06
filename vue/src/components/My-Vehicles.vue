@@ -2,17 +2,16 @@
   <div class="row">
     <div class="container">
       <h3>My vehicles</h3>
+      <p>This feature will be up soon</p>
     </div>
     <ul class="collection">
       <li class="collection-item avatar" v-for="vehicle in vehicles" v-show="vehicle.user_id[0].target_id == uid">
         <div>
-          <img class="circle" v-bind:src="vehicle.field_image[0].url" v-bind:alt="vehicle.field_image[0].alt">
           <span class="title">{{ vehicle.name[0].value }}</span>
           <p><strong>Seats:</strong> {{ vehicle.field_seats[0].value }}</p>
           <p><strong>Licence:</strong> {{ vehicle.field_license[0].value }}</p>
           <p>
             <strong>Rating:</strong> 
-            <span v-for="star in vehicle.field_rating[0].value">
               <i class="material-icons">star</i>
             </span>
           </p>
@@ -20,7 +19,6 @@
         </div>
       </li>
     </ul>
-    <router-link to="/create" class="btn-floating btn-large waves-effect waves-light red right"><i class="material-icons">add</i></router-link>
   </div>
 </template>
 
@@ -37,7 +35,7 @@ export default {
   created (){
     this.uid = localStorage.getItem('uid');
     axios
-    .get('http://localhost/api/vehicles')
+    .get('http://localhost/api/couches')
     .then(({data: response}) => {
       this.vehicles = response;
       console.log(this.vehicles[0].user_id[0].target_id);

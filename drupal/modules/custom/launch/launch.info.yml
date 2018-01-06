@@ -1,4 +1,4 @@
-name: Launch
+name: launch
 type: module
 description: Launch Module
 core: 8.x

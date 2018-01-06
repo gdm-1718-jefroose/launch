@@ -21,16 +21,10 @@
       </div>
       <ul class="collection">
         <li class="collection-item avatar" v-for="vehicle in vehicles">
-          <img class="circle" v-bind:src="vehicle.field_image[0].url" v-bind:alt="vehicle.field_image[0].alt">
+          <img class="circle" src="https://secure.img1-fg.wfcdn.com/im/69056323/resize-h299-p1-w299%5Ecompr-r85/3321/33218498/Patricia+Loveseat.jpg" alt="Couch">
           <span class="title">{{ vehicle.name[0].value }}</span>
           <p><strong>Seats:</strong> {{ vehicle.field_seats[0].value }}</p>
           <p><strong>Licence:</strong> {{ vehicle.field_license[0].value }}</p>
-          <p>
-            <strong>Rating:</strong> 
-            <span v-for="star in vehicle.field_rating[0].value">
-              <i class="material-icons">star</i>
-            </span>
-          </p>
           <router-link :to="{ name: 'vehicle-detail', params: { vehicleID: vehicle.id[0].value }}" class="secondary-content"><i class="material-icons">forward</i></router-link>
         </li>
       </ul>
@@ -97,10 +91,18 @@ export default {
       this.customBus.$emit('resize');
     })
   },
+  mounted: function () {
+    this.$nextTick(function () {
+      var tabs = document.querySelector('.tabs');
+      if (tabs){
+        var instance4 = new M.Tabs(tabs);
+      }
+    })
+  },
   created() {
     this.loading = true;
     axios
-      .get('http://localhost/api/vehicles')
+      .get('http://localhost/api/couches')
       .then(({data: response}) => {
         this.loading = false;
         this.vehicles = response;
@@ -128,6 +130,7 @@ export default {
         lng: position.coords.longitude,
       };
     });
+
   },
   methods: {
     toggleInfoWindow: function(marker, idx) {

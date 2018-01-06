@@ -32,11 +32,6 @@ var sidenav = document.querySelector('.sidenav');
 var instance = new M.Sidenav(sidenav);
 var dropdown = document.querySelector('.dropdown-trigger');
 var instance2 = new M.Dropdown(dropdown);
-var select = document.querySelector('select');
-if (select){
-  var instance3 = new M.Select(select);
-}
-var tabs = document.querySelector('.tabs');
-if (tabs){
-  var instance4 = new M.Tabs(tabs);
-}
+
+
+

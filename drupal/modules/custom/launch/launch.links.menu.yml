@@ -1,14 +1,56 @@
 
-# Vehicle menu items definition
-entity.vehicle.collection:
-  title: 'Vehicle list'
-  route_name: entity.vehicle.collection
-  description: 'List Vehicle entities'
+# Couch menu items definition
+entity.couch.collection:
+  title: 'Couch list'
+  route_name: entity.couch.collection
+  description: 'List Couch entities'
   parent: system.admin_structure
   weight: 100
 
-vehicle.admin.structure.settings:
-  title: Vehicle settings
-  description: 'Configure Vehicle entities'
-  route_name: vehicle.settings
+couch.admin.structure.settings:
+  title: Couch settings
+  description: 'Configure Couch entities'
+  route_name: couch.settings
+  parent: system.admin_structure
+
+# Reservation menu items definition
+entity.reservation.collection:
+  title: 'Reservation list'
+  route_name: entity.reservation.collection
+  description: 'List Reservation entities'
+  parent: system.admin_structure
+  weight: 100
+
+reservation.admin.structure.settings:
+  title: Reservation settings
+  description: 'Configure Reservation entities'
+  route_name: reservation.settings
+  parent: system.admin_structure
+
+# Dealer menu items definition
+entity.dealer.collection:
+  title: 'Dealer list'
+  route_name: entity.dealer.collection
+  description: 'List Dealer entities'
+  parent: system.admin_structure
+  weight: 100
+
+dealer.admin.structure.settings:
+  title: Dealer settings
+  description: 'Configure Dealer entities'
+  route_name: dealer.settings
+  parent: system.admin_structure
+
+# Review menu items definition
+entity.review.collection:
+  title: 'Review list'
+  route_name: entity.review.collection
+  description: 'List Review entities'
+  parent: system.admin_structure
+  weight: 100
+
+review.admin.structure.settings:
+  title: Review settings
+  description: 'Configure Review entities'
+  route_name: review.settings
   parent: system.admin_structure

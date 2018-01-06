@@ -1,30 +1,76 @@
-add vehicle entities:
-  title: 'Create new Vehicle entities'
+add couch entities:
+  title: 'Create new Couch entities'
 
-administer vehicle entities:
-  title: 'Administer Vehicle entities'
-  description: 'Allow to access the administration form to configure Vehicle entities.'
+administer couch entities:
+  title: 'Administer Couch entities'
+  description: 'Allow to access the administration form to configure Couch entities.'
   restrict access: true
 
-delete vehicle entities:
-  title: 'Delete Vehicle entities'
+delete couch entities:
+  title: 'Delete Couch entities'
 
-edit vehicle entities:
-  title: 'Edit Vehicle entities'
+edit couch entities:
+  title: 'Edit Couch entities'
 
-view published vehicle entities:
-  title: 'View published Vehicle entities'
+view published couch entities:
+  title: 'View published Couch entities'
 
-view unpublished vehicle entities:
-  title: 'View unpublished Vehicle entities'
+view unpublished couch entities:
+  title: 'View unpublished Couch entities'
+add reservation entities:
+  title: 'Create new Reservation entities'
 
-view all vehicle revisions:
-  title: 'View all Vehicle revisions'
+administer reservation entities:
+  title: 'Administer Reservation entities'
+  description: 'Allow to access the administration form to configure Reservation entities.'
+  restrict access: true
 
-revert all vehicle revisions:
-  title: 'Revert all Vehicle revisions'
-  description: 'Role requires permission <em>view Vehicle revisions</em> and <em>edit rights</em> for vehicle entities in question or <em>administer vehicle entities</em>.'
+delete reservation entities:
+  title: 'Delete Reservation entities'
 
-delete all vehicle revisions:
-  title: 'Delete all revisions'
-  description: 'Role requires permission to <em>view Vehicle revisions</em> and <em>delete rights</em> for vehicle entities in question or <em>administer vehicle entities</em>.'
+edit reservation entities:
+  title: 'Edit Reservation entities'
+
+view published reservation entities:
+  title: 'View published Reservation entities'
+
+view unpublished reservation entities:
+  title: 'View unpublished Reservation entities'
+add dealer entities:
+  title: 'Create new Dealer entities'
+
+administer dealer entities:
+  title: 'Administer Dealer entities'
+  description: 'Allow to access the administration form to configure Dealer entities.'
+  restrict access: true
+
+delete dealer entities:
+  title: 'Delete Dealer entities'
+
+edit dealer entities:
+  title: 'Edit Dealer entities'
+
+view published dealer entities:
+  title: 'View published Dealer entities'
+
+view unpublished dealer entities:
+  title: 'View unpublished Dealer entities'
+add review entities:
+  title: 'Create new Review entities'
+
+administer review entities:
+  title: 'Administer Review entities'
+  description: 'Allow to access the administration form to configure Review entities.'
+  restrict access: true
+
+delete review entities:
+  title: 'Delete Review entities'
+
+edit review entities:
+  title: 'Edit Review entities'
+
+view published review entities:
+  title: 'View published Review entities'
+
+view unpublished review entities:
+  title: 'View unpublished Review entities'

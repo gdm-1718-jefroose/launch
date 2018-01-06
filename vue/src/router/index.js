@@ -7,6 +7,8 @@ import login from '@/components/Login'
 import register from '@/components/Register'
 import profile from '@/components/Profile'
 import myVehicles from '@/components/My-Vehicles'
+import myReservations from '@/components/My-Reservations'
+import ReservationCreate from '@/components/Reservation-Create'
 
 Vue.use(Router)
 
@@ -46,6 +48,16 @@ export default new Router({
       path: '/my-vehicles',
       name: 'my-vehicles',
       component: myVehicles
+    },
+    {
+      path: '/reserve/:vehicleID',
+      name: 'reservation-create',
+      component: ReservationCreate
+    },
+    {
+      path: '/my-reservations',
+      name: 'my-reservations',
+      component: myReservations
     }
   ]
 })
