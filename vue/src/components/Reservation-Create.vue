@@ -47,11 +47,14 @@ export default {
     return {
       from:'',
       until:'',
+      calculateFrom: '',
+      calculateUntil: '',
       dateDifference:0,
-      datepicker:'',
+      datepickerF:'',
+      datepickerU:'',
       vehicle:'',
       price: 0,
-      totalPrice: 0
+      totalPrice: 0,
     }
   },
   created(){
@@ -76,34 +79,36 @@ export default {
           instance11.options.minDate = selectDate;
         }
       });
+      this.from = instance10;
       var instance11 = new M.Datepicker(datapickerUntil,  {
         format: 'yyyy-mm-dd', 
         maxDate: 0,
         onSelect: function(selectDate){
           instance10.options.maxDate = selectDate;
         }
-        });
-      this.datepicker = instance10;
+      });
+      this.until = instance11;
     })
   },
   methods: {
     refreshFrom: function(){
-      this.from = this.$refs.from.value;
-      console.log(this.from);
+      this.calculateFrom = this.$refs.from.value;
+      console.log(this.calculateFrom);
       this.calculateTimeDifference();
+
     },
 
     refreshUntil: function(){
-      this.until = this.$refs.until.value;
-      console.log(this.until);
+      this.calculateUntil = this.$refs.until.value;
+      console.log(this.calculateUntil);
       this.calculateTimeDifference();
     },
 
     calculateTimeDifference: function(){
-      if(this.from){
-        var date1 = new Date(this.from);
-        if(this.until){
-          var date2 = new Date(this.until);
+      if(this.calculateFrom){
+        var date1 = new Date(this.calculateFrom);
+        if(this.calculateUntil){
+          var date2 = new Date(this.calculateUntil);
           var timeDiff = Math.abs(date2.getTime() - date1.getTime());
           var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24)); 
           this.dateDifference = diffDays + 1;
@@ -138,7 +143,7 @@ export default {
         ],
         "field_from": [
             {
-                "value": this.from
+                "value": this.from.date
             }
         ],
         "field_price": [
@@ -148,7 +153,7 @@ export default {
         ],
         "field_until": [
             {
-                "value": this.until
+                "value": this.until.date
             }
         ]
     }
@@ -156,7 +161,7 @@ export default {
       axios
         .post('http://localhost/entity/reservation', newReservation, config)
         .then((response)=>{
-          router.go('/my-reservations');  
+          router.push('/my-reservations');  
         })
         .catch((error) => {
           console.log(error);
