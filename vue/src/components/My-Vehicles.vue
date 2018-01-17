@@ -2,7 +2,6 @@
   <div class="row">
     <div class="container">
       <h3>My vehicles</h3>
-      <p>This feature will be up soon</p>
     </div>
     <ul class="collection">
       <li class="collection-item avatar" v-for="vehicle in vehicles" v-show="vehicle.user_id[0].target_id == uid">

@@ -1,3 +1,15 @@
 .tabs{
   margin-top: 10px;
 }
+
+.tabs .tab a{
+  color: #48a7f2;
+}
+
+.tabs .tab a.active{
+  color: #48a7f2;
+}
+
+.tabs .indicator{
+  background-color: #48a7f2;
+}

@@ -113,7 +113,7 @@ export default {
               "lat": this.vehicles[i].field_latitude[0].value,
               "lng": this.vehicles[i].field_longitude[0].value
             },
-            'info': this.vehicles[i].name[0].value
+            'info': this.vehicles[i].name[0].value,
           }
           data.push(tempData);
         }

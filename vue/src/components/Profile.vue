@@ -48,7 +48,7 @@
           <label class="active" for="country">Country</label>
         </div>
       </div>-->
-      <button class="btn waves-effect waves-light" type="submit" name="action">Save
+      <button class="btn waves-effect waves-light blue lighten-1 col s12" type="submit" name="action">Save
         <i class="material-icons right">save</i>
       </button>
     </form>
@@ -93,6 +93,9 @@ export default {
       .catch(error => {
         console.info(error.message)
       })
+  },
+  methods: {
+    
   }
 }
 </script>

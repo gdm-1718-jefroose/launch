@@ -18,17 +18,42 @@ export default new Router({
     {
       path: '/',
       name: 'vehicle-list',
-      component: vehicleList
+      component: vehicleList,
+      beforeEnter: (to, from, next) => {
+        if (localStorage.getItem('auth') == null) {
+          next('/login')
+        } else {
+          next()
+        }
+      }  
+    },
+    {
+      path: '*',
+      redirect: '/login'
     },
     {
       path: '/vehicle/:vehicleID',
       name: 'vehicle-detail',
-      component: vehicleDetail
+      component: vehicleDetail,
+      beforeEnter: (to, from, next) => {
+        if (localStorage.getItem('auth') == null) {
+          next('/login')
+        } else {
+          next()
+        }
+      } 
     },
     {
       path:'/create',
       name: 'vehicle-create',
-      component: vehicleCreate
+      component: vehicleCreate,
+      beforeEnter: (to, from, next) => {
+        if (localStorage.getItem('auth') == null) {
+          next('/login')
+        } else {
+          next()
+        }
+      } 
     },
     {
       path: '/login',
@@ -43,27 +68,62 @@ export default new Router({
     {
       path: '/profile',
       name: 'profile',
-      component: profile
+      component: profile,
+      beforeEnter: (to, from, next) => {
+        if (localStorage.getItem('auth') == null) {
+          next('/login')
+        } else {
+          next()
+        }
+      } 
     },
     {
       path: '/my-vehicles',
       name: 'my-vehicles',
-      component: myVehicles
+      component: myVehicles,
+      beforeEnter: (to, from, next) => {
+        if (localStorage.getItem('auth') == null) {
+          next('/login')
+        } else {
+          next()
+        }
+      } 
     },
     {
       path: '/reserve/:vehicleID',
       name: 'reservation-create',
-      component: reservationCreate
+      component: reservationCreate,
+      beforeEnter: (to, from, next) => {
+        if (localStorage.getItem('auth') == null) {
+          next('/login')
+        } else {
+          next()
+        }
+      } 
     },
     {
       path: '/my-reservations',
       name: 'my-reservations',
-      component: myReservations
+      component: myReservations,
+      beforeEnter: (to, from, next) => {
+        if (localStorage.getItem('auth') == null) {
+          next('/login')
+        } else {
+          next()
+        }
+      } 
     },
     {
       path: '/reservation/:reservationID',
       name: 'reservation-edit',
-      component: reservationEdit
+      component: reservationEdit,
+      beforeEnter: (to, from, next) => {
+        if (localStorage.getItem('auth') == null) {
+          next('/login')
+        } else {
+          next()
+        }
+      } 
     }
   ]
 })

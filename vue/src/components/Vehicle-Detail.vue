@@ -65,7 +65,7 @@
             <label>Rating</label>
           </div>
         </div>
-        <button class="btn waves-effect waves-light blue lighten-1" type="submit" name="action">Add
+        <button class="btn waves-effect waves-light blue lighten-1 col s12" type="submit" name="action">Add
           <i class="material-icons right">send</i>
         </button>
       </form>
