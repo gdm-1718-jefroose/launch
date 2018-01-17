@@ -5,8 +5,8 @@
         <div class="col s12">
           <ul class="collection">
             <li class="collection-item avatar" v-for="reservation in reservations">
-              <img class="circle" src="https://secure.img1-fg.wfcdn.com/im/69056323/resize-h299-p1-w299%5Ecompr-r85/3321/33218498/Patricia+Loveseat.jpg" alt="Couch">
-              <span class="title">{{getVehicleName(reservation.field_couch[0].target_id)}}</span>
+              <img class="circle" :src="reservation.field_imgvehicle[0].value" alt="Couch">
+              <span class="title">{{reservation.field_namevehicle[0].value}}</span>
               <p><strong>From: </strong>{{ formatDate(reservation.field_from[0].value)}}</p>
               <p><strong>Until: </strong>{{ formatDate(reservation.field_until[0].value)}}</p>
               <div class="secondary-content">
@@ -51,6 +51,12 @@ export default {
   },
   methods: {
     deleteReservation(order) {
+      
+      var authHash = localStorage.getItem('auth')
+      var auth = String(window.atob(authHash))
+      var divider = auth.indexOf(':')
+      var authUser = auth.substring(0, divider);
+      var authPass = auth.substring(divider + 1, auth.length)
 
       var config = {
         headers: {
@@ -58,11 +64,10 @@ export default {
           'Content-Type': 'application/json'
         },
         auth: {
-          username: 'launch-user',
-          password: 'launch-pass'
+          username: authUser,
+          password: authPass
         },
       };
-
       axios
         .delete('http://localhost/launch/reservation/' + order.id[0].value, config)
         .then(() => {
@@ -80,15 +85,6 @@ export default {
       var year = data.getFullYear();
 
       return day + '/' + month + '/' + year; 
-    },
-    getVehicleName(id) {
-      axios
-        .get('http://localhost/api/couch/' + id)
-        .then(({data: response})=> {
-          var name = response[0].name[0].value
-        })
-        
-      return name;
     },
   }
 

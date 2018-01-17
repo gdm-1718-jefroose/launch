@@ -2,9 +2,16 @@
   <div class="row">
     <div class="col s12">
       <h5 class="center"> MAKE RESERVATION </h5>
-      <blockquote>
-        Experience this couch.
-      </blockquote>
+      <div class="row">
+        <div class="col s12">
+          <div class="card">
+            <div class="card-image">
+              <img :src="vehicle[0].field_image[0].url" alt="couch">
+              <span class="card-title blue lighten-1">{{ vehicle[0].name[0].value }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
       <form class="card-panel" v-on:submit="addReservation">
         <div class="row">
           <div class="input-field col s12">
@@ -28,7 +35,7 @@
         </div>
         <div class="row">
           <div class="col s12">
-            <button class="btn waves-effect waves-light" type="submit" name="action">Reserve
+            <button class="btn waves-effect waves-light blue lighten-1" type="submit" name="action">Reserve
               <i class="material-icons right">send</i>
             </button>
           </div>
@@ -68,7 +75,7 @@ export default {
         console.info(error.message)
       })
   },
-  mounted: function () {
+  updated: function () {
     this.$nextTick(function () {
       var datapickerFrom = document.querySelector('.datepicker-from');
       var datapickerUntil = document.querySelector('.datepicker-until');
@@ -120,7 +127,12 @@ export default {
 
     addReservation: function(event){
       event.preventDefault();
-      
+      var uid = localStorage.getItem('uid')
+      var authHash = localStorage.getItem('auth')
+      var auth = String(window.atob(authHash))
+      var divider = auth.indexOf(':')
+      var authUser = auth.substring(0, divider);
+      var authPass = auth.substring(divider + 1, auth.length)
 
       var config = {
         headers: {
@@ -128,8 +140,8 @@ export default {
           'Content-Type': 'application/json'
         },
         auth: {
-          username: 'launch-user',
-          password: 'launch-pass'
+          username: authUser,
+          password: authPass
         },
       };
 
@@ -154,6 +166,16 @@ export default {
         "field_until": [
             {
                 "value": this.until.date
+            }
+        ],
+        "field_imgvehicle": [
+            {
+                "value": this.vehicle[0].field_image[0].url
+            }
+        ],
+        "field_namevehicle": [
+            {
+                "value": this.vehicle[0].name[0].value              
             }
         ]
     }

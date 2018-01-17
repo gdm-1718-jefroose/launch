@@ -6,8 +6,8 @@
     <div class="col s12 m12" v-for="vehicleItem in vehicle">
       <div class="card">
         <div class="card-image">
-          <img src="https://secure.img1-fg.wfcdn.com/im/69056323/resize-h299-p1-w299%5Ecompr-r85/3321/33218498/Patricia+Loveseat.jpg" alt="couch">
-          <span class="card-title teal">{{ vehicleItem.name[0].value }}</span>
+          <img :src="vehicleItem.field_image[0].url" alt="couch">
+          <span class="card-title blue lighten-1">{{ vehicleItem.name[0].value }}</span>
         </div>
         <div class="card-content">
           <p><strong>Seats: </strong>{{ vehicleItem.field_seats[0].value }}</p>
@@ -15,7 +15,7 @@
           <p><strong>Battery: </strong>{{ vehicleItem.field_battery[0].value }}%</p>
         </div>
       </div>
-      <router-link :to="{ name: 'reservation-create', params: { vehicleID: vehicleItem.id[0].value }}" class="col s12 btn-large waves-effect waves-light">Make a reservation</router-link>
+      <router-link :to="{ name: 'reservation-create', params: { vehicleID: vehicleItem.id[0].value }}" class="col s12 btn-large waves-effect waves-light blue lighten-1">Make a reservation</router-link>
     </div>
 
     <div class="col s12">
@@ -65,7 +65,7 @@
             <label>Rating</label>
           </div>
         </div>
-        <button class="btn waves-effect waves-light" type="submit" name="action">Add
+        <button class="btn waves-effect waves-light blue lighten-1" type="submit" name="action">Add
           <i class="material-icons right">send</i>
         </button>
       </form>
@@ -129,6 +129,11 @@ export default {
     addReview: function(event){
       event.preventDefault();
       
+      var authHash = localStorage.getItem('auth')
+      var auth = String(window.atob(authHash))
+      var divider = auth.indexOf(':')
+      var authUser = auth.substring(0, divider);
+      var authPass = auth.substring(divider + 1, auth.length)
 
       var config = {
         headers: {
@@ -136,8 +141,8 @@ export default {
           'Content-Type': 'application/json'
         },
         auth: {
-          username: 'launch-user',
-          password: 'launch-pass'
+          username: authUser,
+          password: authPass
         },
       };
 

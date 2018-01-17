@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <nav>
-      <div class="nav-wrapper">
+      <div class="nav-wrapper blue lighten-1">
         <router-link to="/" class="brand-logo">Launch</router-link>
         <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">

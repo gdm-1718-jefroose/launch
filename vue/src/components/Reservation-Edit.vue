@@ -171,6 +171,11 @@ export default {
     addReservation: function(event){
       event.preventDefault();
       
+      var authHash = localStorage.getItem('auth')
+      var auth = String(window.atob(authHash))
+      var divider = auth.indexOf(':')
+      var authUser = auth.substring(0, divider);
+      var authPass = auth.substring(divider + 1, auth.length)
 
       var config = {
         headers: {
@@ -178,11 +183,10 @@ export default {
           'Content-Type': 'application/json'
         },
         auth: {
-          username: 'launch-user',
-          password: 'launch-pass'
+          username: authUser,
+          password: authPass
         },
       };
-
 
       var editReservation =     {
         "field_from": [
