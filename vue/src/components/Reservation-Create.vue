@@ -6,8 +6,8 @@
         <div class="col s12">
           <div class="card">
             <div class="card-image">
-              <img :src="vehicle[0].field_image[0].url" alt="couch">
-              <span class="card-title blue lighten-1">{{ vehicle[0].name[0].value }}</span>
+              <img :src="vehicleImage" alt="couch">
+              <span class="card-title blue lighten-1">{{ vehicleName }}</span>
             </div>
           </div>
         </div>
@@ -41,6 +41,24 @@
           </div>
         </div>
       </form>
+      <blockquote>
+        This vehicle is unavailable in the following periods
+      </blockquote>
+      <table>
+        <thead>
+          <tr>
+              <th>From</th>
+              <th>Until</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr v-for="reservation in reservations">
+            <td>{{formatDate(reservation.field_from[0].value)}}</td>
+            <td>{{formatDate(reservation.field_until[0].value)}}</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </template>
@@ -62,6 +80,9 @@ export default {
       vehicle:'',
       price: 0,
       totalPrice: 0,
+      reservations: '',
+      vehicleImage: '',
+      vehicleName: '',
     }
   },
   created(){
@@ -70,12 +91,23 @@ export default {
       .then(({data: response}) => {
         this.vehicle = response;
         this.price = this.vehicle[0].field_price[0].value;
+        this.vehicleImage = this.vehicle[0].field_image[0].url
+        this.vehicleName = this. vehicle[0].name[0].value
       })
       .catch(error => {
         console.info(error.message)
       })
+    
+    axios
+      .get('http://localhost/api/reservations/vehicle/' + this.$route.params.vehicleID)
+      .then(({data: response}) =>{
+        this.reservations = response;
+      })
+      .catch(error =>{
+        console.info(error.message)
+      })
   },
-  updated: function () {
+  mounted: function () {
     this.$nextTick(function () {
       var datapickerFrom = document.querySelector('.datepicker-from');
       var datapickerUntil = document.querySelector('.datepicker-until');
@@ -123,6 +155,14 @@ export default {
           console.log(this.dateDifference);
         }
       }
+    },
+    formatDate(date) {
+      var data = new Date(date);
+      var day = data.getDate();
+      var month = data.getMonth() + 1;
+      var year = data.getFullYear();
+
+      return year + '-' + month + '-' + day; 
     },
 
     addReservation: function(event){
